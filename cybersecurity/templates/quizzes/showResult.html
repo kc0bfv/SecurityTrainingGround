@@ -1,0 +1,12 @@
+{% extends "quizzes/base.html" %}
+
+{% block title %}Quiz Results{% endblock %}
+
+{% block content %}
+	<div class="resultText">
+		{{ result_text }}
+	</div>
+	<div class="resultBackLink">
+		<a href="{% url 'index' %}">Take Another</a>
+	</div>
+{% endblock %}

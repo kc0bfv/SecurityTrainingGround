@@ -1,0 +1,4 @@
+I need to let users know: The stop script assumes that only playground instances are running with the security group and subnet combo you provide.  If you run some other instances with that combo, they'll get killed too...
+
+TODO:
+Put how to accomplish Windows actions in the training files

@@ -1,0 +1,16 @@
+{% extends "quizzes/base.html" %}
+
+{% block title %}Computer Security Quizzes{% endblock %}
+
+{% block content %}
+	{% include "quizzes/indexContent" %}
+
+	<div class="sectionHeader">
+		Scoreboard
+	</div>
+	{% for entry in scoreboard %}
+		<div class="scoreboardEntry">
+			{{ entry.score }} - {{ entry.user.username }}
+		</div>
+	{% endfor %}
+{% endblock %}

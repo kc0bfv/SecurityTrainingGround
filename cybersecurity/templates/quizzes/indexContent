@@ -1,0 +1,19 @@
+	{% if latest_quiz_list %}
+		<div class="sectionHeader">
+			Lessons and Quizzes
+		</div>
+		<div id="lessonsAndQuizzes">
+		{% for quiz in latest_quiz_list %}
+			<div class="lessonQuizOffering">
+				<a href="{% url 'quizzes:lesson' quiz.shortname %}">
+					{{ quiz.title }} Lesson</a> &nbsp; &nbsp; &nbsp; &nbsp;
+				<a href="{% url 'quizzes:takeQuiz' quiz.shortname %}">
+					{{ quiz.title }} Quiz</a>
+			</div>
+		{% endfor %}
+		</div>
+	{% else %}
+		<div class="errorBox">
+			No quizzes are available right now.
+		</div>
+	{% endif %}

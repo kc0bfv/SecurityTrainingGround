@@ -1,0 +1,39 @@
+{% extends "quizzes/base.html" %}
+
+{% block title %}Quiz - {{ quiz.title }}{% endblock %}
+
+{% block content %}
+	{% if error_message %}
+		<div class="errorBox">
+			{{ error_message }}
+		</div>
+	{% endif %}
+	{% if quiz.question_set.all %}
+		<form action="{% url 'quizzes:submitQuiz' quiz.shortname %}" method="post">
+			{% csrf_token %}
+			<div class="questionsContainer">
+				{% for question in quiz.question_set.all %}
+					<div class="questionContainer">
+						<div class="questionTextContainer">
+							{{ question.question|safe }}
+						</div>
+						<div class="answersContainer">
+							{% for answer in question.answer_set.all %}
+								<div class="answerTextContainer">
+									<input type="radio" name="{{ question.id }}"
+										id="{{ question.id }}-{{ answer.id }}"
+										value="{{ answer.id }}">
+									<label for="{{ question.id }}-{{ answer.id }}">
+										{{ answer.answer|safe }}</label>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		<input type="submit" value="Submit">
+		</form>
+	{% else %}
+		<p>No questions here, sorry
+	{% endif %}
+{% endblock %}

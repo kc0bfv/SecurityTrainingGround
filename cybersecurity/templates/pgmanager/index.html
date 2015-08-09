@@ -1,0 +1,22 @@
+{% extends "pgmanager/base.html" %}
+
+{% block title %}Computer Security Playground{% endblock %}
+
+{% block extraHeadStuff %}
+	{% if timeLeft %}
+		<meta http-equiv="refresh" content="10">
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+	{% include "pgmanager/indexContent" %}
+
+	<div class="sectionHeader">
+		Scoreboard
+	</div>
+	{% for entry in scoreboard %}
+		<div class="scoreboardEntry">
+			{{ entry.score }} - {{ entry.user.username }}
+		</div>
+	{% endfor %}
+{% endblock %}

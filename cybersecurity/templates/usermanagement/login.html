@@ -1,0 +1,30 @@
+{% extends "registration/base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+	{% if form.errors %}
+		<div class="errorBox">
+			Your username and password didn't match.  Try again.
+		</div>
+	{% endif %}
+
+	<form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+		{% csrf_token %}
+		<div class="userpassEntry">
+			{{ form.username.label_tag }}
+			{{ form.username }}
+		</div>
+		<div class="userpassEntry">
+			{{ form.password.label_tag }}
+			{{ form.password }}
+		</div>
+
+		<div class="userpassEntry">
+			<input type="submit" value="Login">
+			<a href="/createuser/">Create User</a>
+		</div>
+		<input type="hidden" name="next" value="{{ next }}">
+	</form>
+{% endblock %}

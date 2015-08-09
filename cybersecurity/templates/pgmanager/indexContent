@@ -1,0 +1,26 @@
+	<div class="sectionHeader">
+		Info
+	</div>
+	<div id="sectionInfo">
+		{% if timeLeft %}
+			<div id="currentInstance">
+				Image time remaining: {{ timeLeft }}
+				<br>Image score: {{ currentScore }}
+				<br>Image IP: {{ IPAddr }}
+				<br>Username: {{ username }}
+				<br>Password: {{ password }}
+			</div>
+		{% endif %}
+		<div id="bestScore">
+			{% if bestScore %}
+				Best Score: {{ bestScore }}  Time: {{ bestScoreTime }}
+			{% else %}
+				You don't yet have a best score...
+			{% endif %}
+		</div>
+	</div>
+	{% if not timeLeft %}
+		<div class="sectionHeader">
+			<a href="{% url 'pgmanager:startInstance' %}">Start The Server</a>
+		</div>
+	{% endif %}

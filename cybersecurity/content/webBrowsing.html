@@ -1,0 +1,76 @@
+		<h1>Web Browsing Securely</h1>
+		<h2>Introduction</h2>
+		<p>It seems like every day we hear about some new breach of security on the Internet.  Some hacker has stolen a ton of passwords, or some company lost a bunch of credit card numbers, or your friend had their Twitter account hacked and they sent you a weird message...  These problems are all caused by companies and people not securing information well enough.  You can&apos;t control how Twitter or Facebook protect your information, but this lesson will introduce you to some simple measures you can use to protect the information you have control over.  It will talk about:
+		<ul>
+			<li>Encrypted Connections</li>
+			<li>Avoiding Drive-by Downloads</li>
+			<li>Social Media Privacy</li>
+		</ul>
+		<p>What the heck does &quot;encrypted&quot; mean?  Or &quot;Drive-by Downloads&quot;?  Keep reading to find out!
+
+		<h2>Encrypted Connections</h2>
+		<p>What the heck does &quot;encryption&quot; mean?  Well, you can &quot;encrypt&quot; data like words or numbers or pictures.  That turns that data into a bunch of gobbledygook that nobody else can understand unless they have the secret password, called a &quot;key&quot;.  If somebody has the key, they can turn the gobbledygook back into the original words or numbers or pictures.  A very simple example of encryption is the &quot;Caesar Shift Cipher&quot;, named after Julius Caesar.  Try it out below, by typing in plaintext and looking at the calculated ciphertext.  See if you can figure out how it works!
+		<div>
+			<h3>Caesar Shift Cipher</h3>
+			<label for="plaintext">Plaintext:</label>
+			<input type="text" id="plaintext" value="" size="30" oninput="caesar(this.value);">
+			<label for="ciphertext">Ciphertext:</label>
+			<input type="text" id="ciphertext" size="30" disabled>
+		</div>
+		<p>Did you figure it out?  If not, try typing in "ABC", or "0123".  What was the output?  The Caesar Shift Cipher moves every letter and number ahead by 3.  Of course, you could come up with your own cipher by moving every letter and number ahead by whatever you want...  This is a very old encryption method, and it&apos;s not too hard to figure out what the pattern is.  Modern encryption methods are a little bit more complicated, but their pattern is almost impossible to figure out.  Mathematicians try to figure out patterns like this every day, it&apos;s their job!
+
+		<div>
+			<img src="/static/images/caesar.jpg" alt="A statue of Julius Caesar" width="400" height="452">
+		</div>
+
+		<p>Ok, so what does this have to do with the Internet?  Sometimes your web browser encrypts your data so that nobody can understand the data except you and the website.  Things like usernames, passwords, and credit cards are important to keep secret.  How do you know if your web browser is encrypting that information?  You&apos;ve probably seen &quot;http&quot; and &quot;https&quot; in website addresses.  The &quot;s&quot; is the important difference between the two and stands for &quot;secure&quot;, and that tells the web browser to encrypt your data.  Some browsers may also use a lock picture in the address bar to tell you whether you&apos;re secure.  Here&apos;s an example of what an encrypted and an unencrypted connection look like in Google Chrome.
+
+		<div>
+			<img src="/static/images/secure.png" alt="A screenshot of an encrypted connection" title="Encrypted" width="300" height="200">
+			<img src="/static/images/unencrypted.png" alt="A screenshot of an unencrypted connection" title="Unencrypted" width="300" height="200">
+		</div>
+
+		<p>Sometimes websites don&apos;t perform encryption correctly.  Their encryption keys are too old, or the keys are supposed to be used for a different website, or the web browser knows that you shouldn&apos;t trust the encryption key for some reason.  Here&apos;s an example of what that looks like in Google Chrome:
+
+		<div>
+			<img src="/static/images/unsecure.png" alt="A screenshot of an untrusted connection" title="Unsecure, untrusted" width="300" height="200">
+		</div>
+
+		<p>Many entirely legitimate websites have encryption problems that are ok to ignore, but your bank should not, and Facebook should not, and Google should not, and other large or popular websites should not.  If you see something like that &quot;untrusted&quot; screenshot when you&apos;ve previously seen the &quot;encrypted connection&quot; screenshot, you should consider not using that website temporarily.  A hacker might be trying to listen to, and steal, your data!
+
+		<h2>Avoiding Drive-by Downloads</h2>
+		<p>What the heck is a &quot;Drive-by Download&quot;?  It&apos;s one way that hackers try to trick people into downloading bad software, and break into a computer.  There are two types of drive-by downloads:
+		<ol>
+			<li>Downloads that trick a user into running them</li>
+			<li>Downloads that take advantage of bugs to run themselves</li>
+		</ol>
+		
+		<p>People have a tendency to click &quot;ok&quot; without reading the message they&apos;re clicking on, and without thinking about the consequences.  Hackers take advantage of that behavior.  You may see a box that asks you to run a plug-in, or application, or Java applet.  If you let that software run, you may be letting a hacker take control of your computer.  Don&apos;t let hackers take control!
+
+		<div>
+			<img src="/static/images/offcliff.jpg" alt="A photo of a car driving off a cliff" width="318" height="228">
+		</div>
+
+		<p>It&apos;s harder to stop downloads that take advantage of web browser bugs, but there are things you can do...
+		<ul>
+			<li>Don&apos;t go to random websites that you do not trust, and don&apos;t click popups</li>
+			<li>Keep your operating system and all its software up-to-date</li>
+			<li>Use anti-virus software</li>
+		</ul>
+
+		<h2>Social Media Privacy</h2>
+		<p>Social media, like Facebook or Twitter, are designed to get you to share information about yourself.  Unfortunately, it&apos;s hard to control who that information actually get&apos;s shared with...  These services are designed to provide information to lot&apos;s of people, and aren&apos;t designed to keep things private.  What is some information you might want to avoid sharing, and why?
+		<dl>
+			<dt>You or your family&apos;s birth dates and birth place</dt>
+			<dd>Birthdays are often used for security questions or identity verification.  Also these can be used to predict most social security numbers with fairly good accuracy.</dd>
+			<dt>Current location or vacation plans</dt>
+			<dd>Do you want everyone to know that your house is unguarded?  It is better to post about your event or vacation after you&apos;re back.</dd>
+			<dt>Your address or phone number</dt>
+			<dd>Having your address and phone number makes it easier to fall victim to identity theft or scams.  At the very least, make sure that the information is restricted from public view.  Better yet, don&apos;t post it at all (your friends and family should know how to contact you anyways).</dd>
+			<dt>Passwords or password hints</dt>
+			<dd>While you probably won&apos;t post your password on Facebook, be careful not to post hints to it.  Many people use things like their child&apos;s birthday or their dog&apos;s name.</dd>
+			<dt>Photos or Info you might not want on the net for the rest of your life</dt>
+			<dd>While you might not be interested in landing that big job with SuperMegaCorp right now, you might be in 10 years.  Don&apos;t let embarrassing info from when you were in middle school, high school, or college keep you from being successful when you are an adult.  According to On Device Research, 10% of people between ages 16 and 34 have been turned down for a new job because of photos or comments on social media sites.</dd>
+		</dl>
+		<p>Facebook, Google+ and other social media sites have privacy settings that can allow you to restrict who is able to see your information.  By default, these settings usually allow many, many people to view your information.  Even restricting access to &quot;friends-of-friends&quot; may be too low a restriction for some of the important information above.  After all, maybe your friend Jimmy clicks &quot;add friend&quot; for people he doesn&apos;t know...  His &quot;friends&quot; may be identity thieves!;
+

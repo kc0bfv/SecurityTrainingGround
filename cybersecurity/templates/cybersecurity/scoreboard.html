@@ -1,0 +1,18 @@
+{% extends "pgmanager/base.html" %}
+
+{% block title %}Scoreboard{% endblock %}
+
+{% block extraHeadStuff %}
+	<meta http-equiv="refresh" content="15">
+{% endblock %}
+
+{% block content %}
+	<div class="sectionHeader">
+		Scoreboard
+	</div>
+	{% for entry in scorelist %}
+		<div class="scoreboardEntry">
+			{{ entry.score }} - {{ entry.username }}
+		</div>
+	{% endfor %}
+{% endblock %}

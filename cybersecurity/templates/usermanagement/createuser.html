@@ -1,0 +1,31 @@
+{% extends "registration/base.html" %}
+
+{% block title %}Create New User{% endblock %}
+
+{% block content %}
+	{% if error_message %}
+		<div class="errorBox">
+			{{ error_message }}
+		</div>
+		{% endif %}
+
+		<form method="post" action="{% url 'usermanagement:submitCreateUser' %}">
+			{% csrf_token %}
+			<div class="userpassEntry">
+				<label for="id_username">Username:</label>
+				<input id="id_username" maxlength="254" name="username" type="text">
+			</div>
+			<div class="userpassEntry" title="Don't use your regular password!">
+				<label for="id_password">Password:</label>
+				<input id="id_password" name="password" type="password">
+			</div>
+			<div class="userpassEntry">
+				<label for="id_food">Favorite Food:</label>
+				<input id="id_food" maxlength="254" name="favoritefood" type="text">
+			</div>
+			<div class="userpassEntry">
+				<input type="submit" value="Create">
+			</div>
+		</form>
+
+{% endblock %}

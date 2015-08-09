@@ -1,0 +1,14 @@
+	<div class="sectionHeader">
+		Scoreboard
+	</div>
+	<table class="scoreboardEntry">
+		<tr>
+			<th>Total Score</th> <th>Username</th> <th>Quiz Score</th> <th>Computer Score</th>
+		</tr>
+	{% for entry in scoreboard %}
+		<tr>
+			<td>{{ entry.score }}</td> <td>{{ entry.username }}</td> <td>{{ entry.qzscore }}</td> <td>{{ entry.pgscore }}</td>
+		</tr>
+
+	{% endfor %}
+	</table>

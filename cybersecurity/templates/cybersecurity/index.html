@@ -1,0 +1,16 @@
+{% extends "cybersecurity/base.html" %}
+
+{% comment %} replace the title with something flexible {% endcomment %}
+{% block title %}CodeJam Cybersecurity{% endblock %}
+
+{% block extraHeadStuff %}
+	<meta http-equiv="refresh" content="15">
+{% endblock %}
+
+{% block content %}
+	{% include "pgmanager/indexContent" %}
+
+	{% include "quizzes/indexContent" %}
+
+	{% include "cybersecurity/scoreboardContent" %}
+{% endblock %}

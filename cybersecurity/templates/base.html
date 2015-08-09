@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>{% block title %}This is the default title{% endblock %}</title>
+		<link rel="stylesheet" type="text/css" href="/static/style.css">
+		<script language="javascript" type="text/javascript" src="/static/javascript.js"></script>
+		{% block extraHeadStuff %}{% endblock %}
+	</head>
+	<body>
+		<div id="headerLine">
+			{% if user.is_authenticated %}
+				<div id="userHeader">{{ user.username }}</div>
+				<div id="loginoutHeader">
+					<a href="{% url 'django.contrib.auth.views.logout' %}">Logout</a>
+				</div>
+			{% else %}
+				<div id="loginoutHeader">
+					<a href="{% url 'scoreboard' %}">Scoreboard</a>
+					&nbsp; &nbsp; &nbsp;
+					<a href="{% url 'django.contrib.auth.views.login' %}">Login</a>
+				</div>
+			{% endif %}
+
+		</div>
+		<div id="content">
+		{% block content %}
+			This is the default page, this should be replaced
+		{% endblock %}
+		</div>
+	</body>
+</html>

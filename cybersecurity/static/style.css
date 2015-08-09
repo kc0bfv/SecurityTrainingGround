@@ -1,0 +1,97 @@
+/*color scheme based on http://colorschemedesigner.com/#3K31Tx999JaWc*/
+
+body {
+	background-color: #0d131f;
+	color: #cbd7f0;
+	text-align: center;
+	width: 100%;
+}
+
+a:link {
+	color:#f1dbc9;
+}
+a:visited {
+	color:#f1dbc9;
+}
+a:hover {
+	color:#f1a970;
+}
+a:active {
+	color:#f1a970;
+}
+
+div {
+	padding: 5px;
+}
+
+#headerLine {
+	padding: 0px;
+	padding-bottom: 10px;
+	border-width: 2px;
+	border-style: none none solid none;
+	border-color: #492000;
+	margin: 0 auto;
+	width: 90%;
+	height: 1.5em;
+}
+
+#userHeader {
+	float: left;
+}
+
+#loginoutHeader {
+	float: right;
+}
+
+#content {
+	width: 70%;
+	margin: 0 auto;
+	text-align: left;
+}
+
+.errorBox {
+	border: 5px solid #492000;
+}
+
+.sectionHeader {
+	padding-top: 50px;
+	text-align: center;
+	font-size: 3em;
+}
+
+.scoreboardEntry {
+	padding-left: 25px;
+	font-size: 2em;
+	text-align: center;
+}
+
+#lessonsAndQuizzes {
+	text-align: center;
+	font-size: 2em;
+}
+
+.questionContainer {
+	padding: 15px;
+}
+
+.questionTextContainer {
+	font-size: 1.5em;
+}
+
+.answersContainer {
+	padding: 15px;
+}
+
+.answerTextContainer {
+	padding: 5px;
+	margin: 5px;
+	border: 2px solid #492000;
+}
+
+.userpassEntry {
+	padding: 10px;
+	text-align: center;
+}
+
+.lessonContent {
+}
