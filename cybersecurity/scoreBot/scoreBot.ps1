@@ -35,6 +35,7 @@ $BADTASKSCONST = @("Microsoft Office Updater")
 # Get the score server and user ID
 # Uncomment for deployment
 $userdata = (Invoke-WebRequest -Uri "http://169.254.169.254/latest/user-data").Content
+$userdata = [System.Text.Encoding]::ASCII.GetString($userdata)
 # For testing only:
 #$userdata = "10.0.2.2:8000;1"
 

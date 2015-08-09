@@ -1,0 +1,7 @@
+Download the scorebot from github
+
+Place the scorebot in a sneaky location:
+C:\Program Files (x86)\Common Files\System\scoreBot.ps1
+
+Create a new scheduled task that runs the following command every 5 minutes
+PowerShell.exe -ExecutionPolicy bypass -File "C:\Program Files (x86)\Common Files\System\scoreBot.ps1"
