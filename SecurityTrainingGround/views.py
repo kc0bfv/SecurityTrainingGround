@@ -44,7 +44,7 @@ def buildScoreboardComponents(request):
 def scoreboard(request):
 	context = buildScoreboardComponents(request)
 
-	return render(request, "cybersecurity/scoreboard.html", context)
+	return render(request, "SecurityTrainingGround/scoreboard.html", context)
 
 @login_required()
 def index(request):
@@ -54,4 +54,4 @@ def index(request):
 	# Do the scoreboard last because those other ones might do a scoreboard too
 	context.update(buildScoreboardComponents(request))
 
-	return render(request, "cybersecurity/index.html", context)
+	return render(request, "SecurityTrainingGround/index.html", context)

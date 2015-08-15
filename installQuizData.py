@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os
 import sys
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cybersecurity.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "SecurityTrainingGround.settings")
 import django
 django.setup()
 

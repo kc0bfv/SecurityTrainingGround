@@ -1,5 +1,5 @@
 """
-Django settings for cybersecurity project.
+Django settings for SecurityTrainingGround project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -12,17 +12,21 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+from SecurityTrainingGround.configfile import CONFIG_FILE
+
+import json
+config = json.load(open(os.path.expanduser(CONFIG_FILE)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open(os.path.expanduser("~/.djangoSecretKey")) as f:
-	SECRET_KEY=f.read()
+SECRET_KEY=config["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-import socket
-if socket.gethostname() == 'testserver':
+if len(config["prod_server"]) > 0 and (
+		config["prod_server"][0] == 'y' or config["prod_server"][0] == 'Y'
+		):
 	DEBUG = False
 else:
 	DEBUG = True
@@ -30,7 +34,9 @@ else:
 TEMPLATE_DEBUG = True
 
 
-ALLOWED_HOSTS = ['.notmet.net', '192.168.0.47', 'codejamsecurity.servegame.org', 'codejam.servegame.org']
+# TODO: put this in the settings file maybe
+#ALLOWED_HOSTS = ['.notmet.net', '192.168.0.47', 'codejamsecurity.servegame.org', 'codejam.servegame.org']
+ALLOWED_HOSTS = [config["prod_domain"]]
 
 
 # Application definition
@@ -56,9 +62,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'cybersecurity.urls'
+ROOT_URLCONF = 'SecurityTrainingGround.urls'
 
-WSGI_APPLICATION = 'cybersecurity.wsgi.application'
+WSGI_APPLICATION = 'SecurityTrainingGround.wsgi.application'
 
 
 # Database
@@ -68,7 +74,15 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    },
+		#'mysqlshell': {
+		#	'ENGINE': 'django.db.backends.mysql',
+		#	'NAME': '',
+		#	'USER': '',
+		#	'PASSWORD': '',
+		#	'HOST': '',
+		#	'PORT': '',
+		#},
 }
 
 # Internationalization
@@ -96,5 +110,3 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 
 
-# Info just for this project
-CONFIG_FILE = "~/.cyberSecConfig"

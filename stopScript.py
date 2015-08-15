@@ -3,7 +3,7 @@
 # Necessary to use the DJANGO database stuff
 import os
 import sys
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cybersecurity.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "SecurityTrainingGround.settings")
 
 import django
 django.setup()
@@ -13,7 +13,7 @@ import datetime
 
 from pgmanager.models import EC2Instance
 
-import cybersecurity.manageEC2 as manageEC2
+import SecurityTrainingGround.manageEC2 as manageEC2
 
 
 config = manageEC2.readConfig()

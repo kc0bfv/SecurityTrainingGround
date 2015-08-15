@@ -3,9 +3,14 @@
 import os.path
 import json
 
-from cybersecurity.settings import CONFIG_FILE
+import string
+import random
+
+from SecurityTrainingGround.configfile import CONFIG_FILE
 
 requiredInput = [ # Prompt, dictionary key name, default
+	("Is this config on the production server", "prod_server", "YES"),
+	("What domain name will users use with this server", "prod_domain", "*"),
 	("Enter the desired AWS region", "aws_region", "us-east-1"),
 	("Enter the desired EC2 availability zone", "aws_avail_zone", "us-east-1a"),
 	("Enter your AWS access key", "aws_access_key", ""),
@@ -57,6 +62,13 @@ except FileNotFoundError:
 # Read in all the inputs, taking proper defaults into account
 for (prompt, key, default) in requiredInput:
 	config = getInput(prompt, key, config, default)
+
+try:
+	currentKey = config["SECRET_KEY"]
+except KeyError:
+	length = 50
+	random.seed()
+	config["SECRET_KEY"] = ''.join(random.SystemRandom().choice(string.ascii_letters + string.digits + string.punctuation) for _ in range(length))
 
 # Write out the new config
 json.dump(config, open(os.path.expanduser(CONFIG_FILE), "w"))

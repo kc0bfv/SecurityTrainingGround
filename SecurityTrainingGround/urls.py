@@ -5,14 +5,14 @@ from django.contrib.auth.views import login, logout
 from django.contrib import admin
 admin.autodiscover()
 
-from cybersecurity import views
+from SecurityTrainingGround import views
 
 from usermanagement import views as umviews
 from pgmanager import views as pgviews
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'cybersecurity.views.home', name='home'),
+    # url(r'^$', 'SecurityTrainingGround.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^$', views.index, name="index"),

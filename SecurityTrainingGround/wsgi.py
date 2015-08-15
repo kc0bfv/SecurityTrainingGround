@@ -1,5 +1,5 @@
 """
-WSGI config for cybersecurity project.
+WSGI config for SecurityTrainingGround project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,7 +11,7 @@ import os
 import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cybersecurity.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "SecurityTrainingGround.settings")
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()

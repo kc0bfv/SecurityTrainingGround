@@ -3,3 +3,14 @@ I need to let users know: The stop script assumes that only playground instances
 TODO:
 Put how to accomplish Windows actions in the training files
 Put how to connect to windows in the app
+Make things look nicer
+
+Incorporate the latest version of the image
+
+
+
+Finish django setup on rana
+Install the mysql database
+Setup the software to use the mysql database
+
+Full up test

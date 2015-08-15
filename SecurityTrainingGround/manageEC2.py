@@ -2,7 +2,7 @@ import json
 import boto.ec2
 import os.path
 
-from cybersecurity.settings import CONFIG_FILE
+from SecurityTrainingGround.settings import CONFIG_FILE
 
 
 def _openConnection(config):

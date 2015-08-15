@@ -8,9 +8,9 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 
 from pgmanager.models import EC2Instance, BestScore
-from cybersecurity.settings import CONFIG_FILE
+from SecurityTrainingGround.settings import CONFIG_FILE
 
-import cybersecurity.manageEC2 as manageEC2
+import SecurityTrainingGround.manageEC2 as manageEC2
 
 def buildIndexComponents(request):
 	bestScore = BestScore.objects.filter(user=request.user)
