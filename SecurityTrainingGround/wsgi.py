@@ -10,8 +10,16 @@ https://docs.djangoproject.com/en/1.6/howto/deployment/wsgi/
 import os
 import sys
 
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "SecurityTrainingGround.settings")
+
+# These two lines are only necessary if your default python isn't python3
+# Make sure INTERP points to the python3 you want to run...
+INTERP = os.path.expanduser("~/opt/python-3.4.3/bin/python")
+if sys.executable != INTERP: os.execl(INTERP, INTERP, *sys.argv)
+
+
+sys.path.append(os.getcwd())
+sys.path.append(os.getcwd() + "/SecurityTrainingGround")
+os.environ["DJANGO_SETTINGS_MODULE"] = "SecurityTrainingGround.settings"
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
