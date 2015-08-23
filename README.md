@@ -30,7 +30,7 @@ If you installed a custom python 3 like above, you're good to go, if not you nee
 If you're on Dreamhost, you need to tell dreamhost to serve the static files correctly:
 ln -s $PWD/SecurityTrainingGround/static public/
 
-Make the stopScript.py automatically run.  A shell script to do this is "runStopScript".  You'll want to modify it for your install...
+Make the stopScript.py automatically run.  A shell script to do this is "runStopScript".  You'll want to modify it for your install...  I put my in crontab to run every 10 minutes, because that's as fast as Dreamhost likes...
 
 ### Setup an Amazon account
 

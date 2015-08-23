@@ -7,12 +7,5 @@
 {% endblock %}
 
 {% block content %}
-	<div class="sectionHeader">
-		Scoreboard
-	</div>
-	{% for entry in scorelist %}
-		<div class="scoreboardEntry">
-			{{ entry.score }} - {{ entry.username }}
-		</div>
-	{% endfor %}
+	{% include "SecurityTrainingGround/scoreboardContent" %}
 {% endblock %}

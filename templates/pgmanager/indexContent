@@ -13,7 +13,6 @@
 					<li>Specify &quot;{{ IPAddr }}&quot; as the computer and hit &quot;Connect&quot;</li>
 					<li>Once it connects, specify &quot;{{ username }}&quot; as the user, and &quot;{{ password }}&quot; as the password.
 				</ol>
-http://www.microsoft.com/en-us/download/details.aspx?id=24596
 				<br>On OS X:
 				<ol>
 					<li>Install &quot;Microsoft Remote Desktop&quot; from the OS X App Store</li>
