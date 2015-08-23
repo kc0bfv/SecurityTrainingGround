@@ -32,6 +32,9 @@ ln -s $PWD/SecurityTrainingGround/static public/
 
 Make the stopScript.py automatically run.  A shell script to do this is "runStopScript".  You'll want to modify it for your install...  I put my in crontab to run every 10 minutes, because that's as fast as Dreamhost likes...
 
+If you want the Django admin CSS to work and you installed that custom Django like above:
+ln -s "$HOME/opt/lib/python3.4/site-packages/django/contrib/admin/static/admin" public/static/
+
 ### Setup an Amazon account
 
 ### Setup an image
