@@ -6,9 +6,19 @@
 			<div id="currentInstance">
 				Image time remaining: {{ timeLeft }}
 				<br>Image score: {{ currentScore }}
-				<br>Image IP: {{ IPAddr }}
-				<br>Username: {{ username }}
-				<br>Password: {{ password }}
+				<br>On Windows:
+				<ol>
+					<li>Press the &quot;Windows&quot; key (between Ctrl+Alt) and &quot;r&quot; at the same time</li>
+					<li>Type in &quot;mstsc&quot; and press &quot;Enter&quot;</li>
+					<li>Specify &quot;{{ IPAddr }}&quot; as the computer and hit &quot;Connect&quot;</li>
+					<li>Once it connects, specify &quot;{{ username }}&quot; as the user, and &quot;{{ password }}&quot; as the password.
+				</ol>
+				<br>On OS X and Linux:
+				<ol>
+					<li>Install rdesktop</li>
+					<li>Run &quot;rdesktop {{ IPAddr }}&quot;</li>
+					<li>Once it connects, specify &quot;{{ username }}&quot; as the user, and &quot;{{ password }}&quot; as the password.
+				</ol>
 			</div>
 		{% endif %}
 		<div id="bestScore">

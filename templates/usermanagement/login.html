@@ -23,7 +23,7 @@
 
 		<div class="userpassEntry">
 			<input type="submit" value="Login">
-			<a href="/createuser/">Create User</a>
+			<a href="{% url 'usermanagement:createUser' %}">Create User</a>
 		</div>
 		<input type="hidden" name="next" value="{{ next }}">
 	</form>
