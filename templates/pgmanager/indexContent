@@ -13,7 +13,16 @@
 					<li>Specify &quot;{{ IPAddr }}&quot; as the computer and hit &quot;Connect&quot;</li>
 					<li>Once it connects, specify &quot;{{ username }}&quot; as the user, and &quot;{{ password }}&quot; as the password.
 				</ol>
-				<br>On OS X and Linux:
+http://www.microsoft.com/en-us/download/details.aspx?id=24596
+				<br>On OS X:
+				<ol>
+					<li>Install &quot;Microsoft Remote Desktop&quot; from the OS X App Store</li>
+					<li>Run &quot;Microsoft Remote Desktop&quot; from your Applications folder</li>
+					<li>Press the &quot;New&quot; button and specify &quot;{{ IPAddr }}&quot; as the &quot;Connection name&quot; and &quot;PC name&quot;</li>
+					<li>Find your new connection in the &quot;My Desktops&quot; dropdown, and double click it</li>
+					<li>Once it connects, specify &quot;{{ username }}&quot; as the user, and &quot;{{ password }}&quot; as the password.
+				</ol>
+				<br>On Linux:
 				<ol>
 					<li>Install rdesktop</li>
 					<li>Run &quot;rdesktop {{ IPAddr }}&quot;</li>

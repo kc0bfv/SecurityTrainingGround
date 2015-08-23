@@ -1,6 +1,7 @@
 # SecurityTrainingGround
 
 ## Installation
+I am hosting my current version of this on Dreamhost, which has been a really good hosting company for me.  Many of these instructions are geared toward them, but in general the instructions are valid for other hosting setups.  If you're hosting yourself, just remember that this uses Django.  I tried to do no magic, so the regular Django setup instructions should work for you.
 
 ### Setup The Server
 If you're on Dreamhost, this is a bit of a pain right now.  This code uses python 3, and Dreamhost has python 2 installed, so here's what I did:
@@ -20,12 +21,16 @@ pip install boto
 
 Ok, now you're ready to download the code, change to your web root then:
 git clone https://github.com/kc0bfv/SecurityTrainingGround.git
+
+If you're using Dreamhost, this next line tells Passenger where to run your program:
 cp SecurityTrainingGround/wsgi.py passenger_wsgi.py
 
 If you installed a custom python 3 like above, you're good to go, if not you need to modify passenger_wsgi.py by commenting out the INTERP and if sys.executable lines.  Put # in front of them.  Easy peasy.
 
 If you're on Dreamhost, you need to tell dreamhost to serve the static files correctly:
 ln -s $PWD/SecurityTrainingGround/static public/
+
+Make the stopScript.py automatically run.  A shell script to do this is "runStopScript".  You'll want to modify it for your install...
 
 ### Setup an Amazon account
 
@@ -40,10 +45,7 @@ Mine is easy to use, but if you don't want to do that there's some instruction o
 
 ##### Set the settings
 
-### Setup the web server
-Install the prerequisites:
-
 ### Set the settings
-Most is self-explanatory, the defaults will get you setup with my image.
+Run "writeConfig.py" and follow the instructions.  Most is self-explanatory, the defaults will get you setup with my image.
 
 ### Try it out!
