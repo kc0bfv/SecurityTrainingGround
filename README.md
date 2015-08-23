@@ -46,6 +46,9 @@ Mine is easy to use, but if you don't want to do that there's some instruction o
 ##### Set the settings
 
 ### Set the settings
+Run "setupDatabase" and give it a Django superuser and password.  This will be the user capable of modifying existing accounts and such, so maybe give it a good password.  Maybe one you don't mind sharing.
+
 Run "writeConfig.py" and follow the instructions.  Most is self-explanatory, the defaults will get you setup with my image.
+
 
 ### Try it out!
