@@ -25,7 +25,7 @@ def submitCreateUser(request):
 	user = authenticate(username=username, password=password)
 	if user is not None:
 		login(request, user) # TODO: doesn't check for disabled account
-		return HttpResponseRedirect(reverse("pgmanager:index"))
+		return HttpResponseRedirect(reverse("index"))
 	else:
 		return render(request, "usermanagement/createuser.html",
 				{"error_message": "Error authenticating new account."})

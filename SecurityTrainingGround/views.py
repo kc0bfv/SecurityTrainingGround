@@ -34,6 +34,7 @@ def buildScoreboardComponents(request):
 			"score": totalScore, "qzscore": qzscore, "pgscore": pgscore}))
 
 	sortableScoreList.sort()
+	sortableScoreList.reverse()
 	sortedScoreList = [i[1] for i in sortableScoreList]
 
 	return {"scoreboard": sortedScoreList}
