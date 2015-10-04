@@ -16,6 +16,7 @@ def buildScoreboardComponents(request):
 	userList = {i.user for i in pgscores}.union({i.user for i in qzscores})
 
 	# For all those users, get both their scores and score sum
+	# TODO: make this thing sort based on totalscore, then the time that score was achieved.  Similar logic to the qzscore version...
 	sortableScoreList = list()
 	for user in userList:
 		try:
@@ -28,14 +29,12 @@ def buildScoreboardComponents(request):
 		except:
 			qzscore = 0
 
-		totalScore = qzscore + pgscore
+		sortableScoreList.append({"username": user.username,
+			"score": qzscore+pgscore, "qzscore": qzscore, "pgscore": pgscore})
 
-		sortableScoreList.append((totalScore, {"username": user.username,
-			"score": totalScore, "qzscore": qzscore, "pgscore": pgscore}))
-
-	sortableScoreList.sort()
-	sortableScoreList.reverse()
-	sortedScoreList = [i[1] for i in sortableScoreList]
+	sortedScoreList = sorted(sortableScoreList,
+			key=lambda k: (k["score"], k["username"]),
+			reverse=True)
 
 	return {"scoreboard": sortedScoreList}
 
